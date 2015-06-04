@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel='stylesheet' href='../../styles/style.css' />
+	<title>Puppies (Home) Page</title>
+</head>
+<body>
+	<h1>This is the home (i.e., '/') page </h1>
+	<p> The puppies array contains
+			<%= pupArrEJS.length%>
+		puppies!
+	</p>
+
+	<p>
+		<h2>The puppies:</h2>
+		<% for (var i = 0; i < pupArrEJS.length; i++){ %>
+		<img src="<%=pupArrEJS[i].pic%>" alt="">
+		<li><%= pupArrEJS[i].name%></li>
+			<ul><%= pupArrEJS[i].breed%></ul>
+			<ul><%= pupArrEJS[i].age%></ul>
+			<ul><a href="/puppies/<%= [i+1] %>">This puppy's page!</a></ul> 
+		<% } %>
+	</p>
+	
+	<a href="/puppies/new">Create a Puppy</a>
+	
+</body>
+</html>
+
